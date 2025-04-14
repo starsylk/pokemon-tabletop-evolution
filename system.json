@@ -1,0 +1,39 @@
+{
+  "id": "pte",
+  "title": "Pokemon Tabletop Evolution",
+  "description": "The Pokemon Tabletop Evolution system for FoundryVTT!",
+  "authors": [
+    {
+      "name": "Lily"
+    }
+  ],
+  "url": "https://github.com/radiant-starshine/pokemon-tabletop-evolution",
+  "license": "LICENSE.txt",
+  "readme": "README.md",
+  "bugs": "https://github.com/radiant-starshine/pokemon-tabletop-evolution/issues",
+  "changelog": "https://github.com/radiant-starshine/pokemon-tabletop-evolution/raw/main/changelog.md",
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": 11,
+    "verified": "11.315"
+  },
+  "esmodules": [ "module/pte.mjs" ],
+  "styles": [ "css/pte.css" ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [],
+  "packFolders": [],
+  "socket": false,
+  "manifest": "https://github.com/radiant-starshine/pokemon-tabletop-evolution/releases/latest/download/system.json",
+  "download": "https://github.com/radiant-starshine/pokemon-tabletop-evolution/releases/latest/download/system.zip",
+  "background": "systems/pte/assets/pte_banner.png",
+  "gridDistance": 1,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "power"
+}
