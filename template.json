@@ -1,8 +1,51 @@
 {
   "Actor": {
-    "types": ["character", "npc"]
+    "types": ["trainer", "pokemon"],
+    "templates": {
+      "bio": {
+        "name": "",
+        "age": 0,
+        "gender": "",
+        "height": 0,
+        "weight": 0
+      },
+      "stats": {
+        "hp": {
+          "value": 10,
+          "mod": 0
+        },
+        "atk": {
+          "value": 5,
+          "mod": 0
+        },
+        "def": {
+          "value": 5,
+          "mod": 0
+        },
+        "spatk": {
+          "value": 5,
+          "mod": 0
+        },
+        "spdef": {
+          "value": 5,
+          "mod": 0
+        },
+        "spd": {
+          "value": 5,
+          "mod": 0
+        }
+      }
+    },
+    "trainer": {
+      "templates": ["bio", "stats"],
+      "money": 0
+    },
+    "pokemon": {
+      "templates": ["bio", "stats"],
+      "species": ""
+    }
   },
   "Item": {
-    "types": ["item", "feature", "spell"]
+    "types": ["item", "move", "token", "tag", "feature", "talent", "pokerole"]
   }
 }
