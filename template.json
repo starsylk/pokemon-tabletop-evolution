@@ -7,45 +7,308 @@
         "age": 0,
         "gender": "",
         "height": 0,
-        "weight": 0
+        "weight": 0,
+        "wc": 4,
+        "power": 1
       },
       "stats": {
+        "health": {
+          "value": 0,
+          "maximum": 0,
+          "temp": 0
+        },
         "hp": {
           "value": 10,
-          "mod": 0
+          "mod": 0,
+          "cs": 0
         },
         "atk": {
           "value": 5,
-          "mod": 0
+          "mod": 0,
+          "cs": 0
         },
         "def": {
           "value": 5,
-          "mod": 0
+          "mod": 0,
+          "cs": 0
         },
         "spatk": {
           "value": 5,
-          "mod": 0
+          "mod": 0,
+          "cs": 0
         },
         "spdef": {
           "value": 5,
-          "mod": 0
+          "mod": 0,
+          "cs": 0
         },
         "spd": {
           "value": 5,
-          "mod": 0
+          "mod": 0,
+          "cs": 0
         }
+      },
+      "skills": {
+        "acrobatics": {
+          "value": 2,
+          "mod": 0,
+          "label": "Acrobatics",
+          "category": "body"
+        },
+        "athletics": {
+          "value": 2,
+          "mod": 0,
+          "label": "Athletics",
+          "category": "body"
+        },
+        "charm": {
+          "value": 2,
+          "mod": 0,
+          "label": "Charm",
+          "category": "spirit"
+        },
+        "combat": {
+          "value": 2,
+          "mod": 0,
+          "label": "Combat",
+          "category": "body"
+        },
+        "command": {
+          "value": 2,
+          "mod": 0,
+          "label": "Command",
+          "category": "spirit"
+        },
+        "focus": {
+          "value": 2,
+          "mod": 0,
+          "label": "Focus",
+          "category": "spirit"
+        },
+        "guile": {
+          "value": 2,
+          "mod": 0,
+          "label": "Guile",
+          "category": "mind"
+        },
+        "intimidate": {
+          "value": 2,
+          "mod": 0,
+          "label": "Intimidate",
+          "category": "body"
+        },
+        "intuition": {
+          "value": 2,
+          "mod": 0,
+          "label": "Intuition",
+          "category": "spirit"
+        },
+        "perception": {
+          "value": 2,
+          "mod": 0,
+          "label": "Perception",
+          "category": "mind"
+        },
+        "stealth": {
+          "value": 2,
+          "mod": 0,
+          "label": "Stealth",
+          "category": "body"
+        },
+        "generalEd": {
+          "value": 2,
+          "mod": 0,
+          "label": "General Ed",
+          "category": "mind"
+        },
+        "medicineEd": {
+          "value": 2,
+          "mod": 0,
+          "label": "Medicine Ed",
+          "category": "mind"
+        },
+        "natureEd": {
+          "value": 2,
+          "mod": 0,
+          "label": "Nature Ed",
+          "category": "mind"
+        },
+        "occultEd": {
+          "value": 2,
+          "mod": 0,
+          "label": "Occult Ed",
+          "category": "mind"
+        },
+        "pokemonEd": {
+          "value": 2,
+          "mod": 0,
+          "label": "Pokémon Ed",
+          "category": "mind"
+        },
+        "techEd": {
+          "value": 2,
+          "mod": 0,
+          "label": "Technology Ed",
+          "category": "mind"
+        }
+      },
+      "bookkeeping": {
+        "slots": {
+          "inventory": {
+            "value": 6,
+            "max": 12
+          },
+          "equipment": {
+            "value": 4,
+            "max": 4
+          }
+        },
+        "notes": ""
       }
     },
     "trainer": {
-      "templates": ["bio", "stats"],
+      "templates": ["bio", "stats", "skills", "bookkeeping"],
       "money": 0
     },
     "pokemon": {
-      "templates": ["bio", "stats"],
-      "species": ""
+      "templates": ["bio", "stats", "skills", "bookkeeping"],
+      "species": "",
+      "owner": ""
     }
   },
   "Item": {
-    "types": ["item", "move", "token", "tag", "feature", "talent", "pokerole"]
+    "types": [
+      "ability",
+      "affliction",
+      "bond",
+      "capability",
+      "feature",
+      "item",
+      "move",
+      "pokerole",
+      "species",
+      "tag",
+      "talent",
+      "token"
+    ],
+    "templates": {
+      "base": {
+        "origin": "",
+        "effect": "",
+        "snippet": "",
+        "rules": [],
+        "enabled": true,
+        "slug": null,
+        "schema": {
+          "version": null,
+          "lastMigration": null
+        },
+        "referenceEffect": "",
+        "source": {
+          "value": "Homebrew"
+        },
+        "stackSlugs": false,
+        "keywords": []
+      },
+      "ability": {
+        "templates": ["base"],
+        "frequency": ""
+      },
+      "affliction": {
+        "templates": ["base"],
+        "target": ""
+      },
+      "bond": {
+        "templates": ["base"],
+        "target": "",
+        "level": ""
+      },
+      "capability": {
+        "templates": ["base"],
+        "restrictions": []
+      },
+      "feature": {
+        "templates": ["base"],
+        "frequency": "",
+        "prerequisites": [],
+        "free": false
+      },
+      "item": {
+        "templates": ["base"]
+      },
+      "move": {
+        "templates": ["base"],
+        "frequency": ""
+      },
+      "pokerole": {
+        "templates": ["base"],
+        "stats": {
+          "available": [],
+          "chosen": []
+        }
+      },
+      "species": {
+        "templates": ["base"],
+        "dex_number": 0,
+        "dex_entry": "",
+        "form": "",
+        "base_stats": {
+          "hp": 5,
+          "atk": 5,
+          "def": 5,
+          "spatk": 5,
+          "spdef": 5,
+          "spd": 5
+        },
+        "types": ["Typeless"],
+        "abilities": [],
+        "capabilities": {
+          "movement": [],
+          "combat": [],
+          "narrative": []
+        },
+        "skills": {
+          "mastered": [],
+          "proficient": [],
+          "inept": []
+        },
+        "height": 0,
+        "size": {
+          "label": "",
+          "height": 1,
+          "width": 1,
+          "z-width": 1,
+          "snake": false,
+          "length": 3
+        },
+        "weight": 0,
+        "wc": 1,
+        "power": 1,
+        "diet": [],
+        "evolutions": [],
+        "moves": {
+          "starting": [],
+          "level": [],
+          "tutor": {
+            "unique": [],
+            "generic": []
+          }
+        }
+      },
+      "tag": {
+        "templates": ["base"]
+      },
+      "talent": {
+        "templates": ["base"],
+        "frequency": "",
+        "prerequisites": [],
+        "free": false
+      },
+      "token": {
+        "templates": ["base"],
+        "value": 1,
+        "max": -1
+      }
+    }
   }
 }
