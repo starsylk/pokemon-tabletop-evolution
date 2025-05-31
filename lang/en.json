@@ -70,28 +70,28 @@
         "abbr": "techEdu"
       }
     },
-    "Stats": {
-      "Hp": {
+    "Stat": {
+      "hp": {
         "long": "Health Points",
         "abbr": "hp"
       },
-      "Atk": {
+      "atk": {
         "long": "Attack",
         "abbr": "atk"
       },
-      "Def": {
+      "def": {
         "long": "Defense",
         "abbr": "def"
       },
-      "SpAtk": {
+      "spatk": {
         "long": "Special Attack",
-        "abbr": "spatk"
+        "abbr": "sp.atk"
       },
-      "SpDef": {
+      "spdef": {
         "long": "Special Defense",
-        "abbr": "spdef"
+        "abbr": "sp.def"
       },
-      "Spd": {
+      "spd": {
         "long": "Speed",
         "abbr": "spd"
       }

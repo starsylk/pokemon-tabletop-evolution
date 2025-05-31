@@ -6,21 +6,21 @@ export const POKEMON_TABLETOP_EVOLUTION = {};
  */
 
 POKEMON_TABLETOP_EVOLUTION.stats = {
-  hp: 'POKEMON_TABLETOP_EVOLUTION.Ability.hp.long',
-  atk: 'POKEMON_TABLETOP_EVOLUTION.Ability.atk.long',
-  def: 'POKEMON_TABLETOP_EVOLUTION.Ability.def.long',
-  spatk: 'POKEMON_TABLETOP_EVOLUTION.Ability.spatk.long',
-  spdef: 'POKEMON_TABLETOP_EVOLUTION.Ability.spdef.long',
-  speed: 'POKEMON_TABLETOP_EVOLUTION.Ability.speed.long',
+  hp: 'POKEMON_TABLETOP_EVOLUTION.Stat.hp.long',
+  atk: 'POKEMON_TABLETOP_EVOLUTION.Stat.atk.long',
+  def: 'POKEMON_TABLETOP_EVOLUTION.Stat.def.long',
+  spatk: 'POKEMON_TABLETOP_EVOLUTION.Stat.spatk.long',
+  spdef: 'POKEMON_TABLETOP_EVOLUTION.Stat.spdef.long',
+  speed: 'POKEMON_TABLETOP_EVOLUTION.Stat.speed.long',
 };
 
-POKEMON_TABLETOP_EVOLUTION.abilityAbbreviations = {
-  hp: 'POKEMON_TABLETOP_EVOLUTION.Ability.hp.abbr',
-  atk: 'POKEMON_TABLETOP_EVOLUTION.Ability.atk.abbr',
-  def: 'POKEMON_TABLETOP_EVOLUTION.Ability.def.abbr',
-  spatk: 'POKEMON_TABLETOP_EVOLUTION.Ability.spatk.abbr',
-  spdef: 'POKEMON_TABLETOP_EVOLUTION.Ability.spdef.abbr',
-  speed: 'POKEMON_TABLETOP_EVOLUTION.Ability.speed.abbr',
+POKEMON_TABLETOP_EVOLUTION.statAbbreviations = {
+  hp: 'POKEMON_TABLETOP_EVOLUTION.Stat.hp.abbr',
+  atk: 'POKEMON_TABLETOP_EVOLUTION.Stat.atk.abbr',
+  def: 'POKEMON_TABLETOP_EVOLUTION.Stat.def.abbr',
+  spatk: 'POKEMON_TABLETOP_EVOLUTION.Stat.spatk.abbr',
+  spdef: 'POKEMON_TABLETOP_EVOLUTION.Stat.spdef.abbr',
+  speed: 'POKEMON_TABLETOP_EVOLUTION.Stat.speed.abbr',
 };
 
 

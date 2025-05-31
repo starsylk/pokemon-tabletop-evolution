@@ -3,6 +3,13 @@
 .window-app {
   font-family: "Roboto", sans-serif;
 }
+.sheet.actor .window-content {
+  background-color: #FF000099;
+  background: url('/systems/pte/assets/Full backdrop.png') no-repeat center;
+  background-size: cover;
+  height: 600px; /* Ensure the background covers the entire viewport height */
+  margin: 0;
+}
 
 .rollable:hover, .rollable:focus {
   color: #000;
@@ -215,6 +222,8 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: 10px;
+  margin-right: 13%;
+  margin-left: 13%;
 }
 .pte .sheet-header .profile-img {
   flex: 0 0 100px;
@@ -235,10 +244,19 @@
   height: 100%;
   margin: 0;
 }
-.pte .sheet-tabs {
+.pte .sheet-tabs-container .sheet-tabs {
+  top: 0;
   flex: 0;
 }
-.pte .sheet-body,
+.pte .sheet-tabs-container {
+  flex: 0;
+  margin-right: 13%;
+  margin-left: 13%;
+}
+.pte .sheet-body {
+  margin-right: 13%;
+  margin-left: 13%;
+}
 .pte .sheet-body .tab,
 .pte .sheet-body .tab .editor {
   height: 100%;
