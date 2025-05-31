@@ -42,8 +42,9 @@ Hooks.once('init', function () {
   // for the base actor/item classes - they are included
   // with the Character/NPC as part of super.defineSchema()
   CONFIG.Actor.dataModels = {
-    character: models.PTECharacter,
-    npc: models.PTENPC
+    trainer: models.PTECharacter,
+    pokemon: models.PTECharacter,
+    // npc: models.PTENPC
   }
   CONFIG.Item.documentClass = PTEItem;
   CONFIG.Item.dataModels = {

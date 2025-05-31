@@ -49,15 +49,16 @@ export class PTEActorSheet extends ActorSheet {
     // Adding a pointer to CONFIG.POKEMON_TABLETOP_EVOLUTION
     context.config = CONFIG.POKEMON_TABLETOP_EVOLUTION;
 
-    // Prepare character data and items.
-    if (actorData.type == 'character') {
+    // Prepare trainer data and items.
+    if (actorData.type == 'trainer') {
       this._prepareItems(context);
       this._prepareCharacterData(context);
     }
 
-    // Prepare NPC data and items.
-    if (actorData.type == 'npc') {
+    // Prepare Pokemon data and items.
+    if (actorData.type == 'pokemon') {
       this._prepareItems(context);
+      this._prepareCharacterData(context);
     }
 
     // Enrich biography info for display
@@ -117,6 +118,7 @@ export class PTEActorSheet extends ActorSheet {
       8: [],
       9: [],
     };
+
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
