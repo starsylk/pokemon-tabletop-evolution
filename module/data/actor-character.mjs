@@ -7,16 +7,24 @@ export default class PTECharacter extends PTEActorBase {
     const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = super.defineSchema();
 
-    schema.attributes = new fields.SchemaField({
+    schema.skills = new fields.SchemaField({
       level: new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 1 })
       }),
     });
 
-    // Iterate over ability names and create a new SchemaField for each.
-    schema.abilities = new fields.SchemaField(Object.keys(CONFIG.POKEMON_TABLETOP_EVOLUTION.abilities).reduce((obj, ability) => {
-      obj[ability] = new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 10, min: 0 }),
+    // Iterate over combat stat names and create a new SchemaField for each.
+    schema.stats = new fields.SchemaField(Object.keys(CONFIG.POKEMON_TABLETOP_EVOLUTION.stats).reduce((obj, stat) => {
+      obj[stat] = new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 5, min: 0 }),
+      });
+      return obj;
+    }, {}));
+
+    // Iterate over skills and create a new SchemaField for each.
+    schema.skills = new fields.SchemaField(Object.keys(CONFIG.POKEMON_TABLETOP_EVOLUTION.skills).reduce((obj, skill) => {
+      obj[skill] = new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 2, min: 0 })
       });
       return obj;
     }, {}));
@@ -25,12 +33,23 @@ export default class PTECharacter extends PTEActorBase {
   }
 
   prepareDerivedData() {
+    // Use for hp tick and base evasion stat calculations which seem to work the same for Pokemon and trainers
+    // I don't love this implementation; stats should be treated as largely interchangeable with the same basic properties (values, labels, etc).
+    // Perhaps the calculated values should be captured elsewhere.
+
+    // pre-calculate one tick of hp
+    this.stats['hp'].tick = Math.floor(this.stats['hp'].value / 10);
+
+    // inititative modifier
+    this.stats['speed'].mod = Math.floor(this.stats['speed'].value / 5);
+
+    // speed evasion (evasion vs. any), capped at 9
+    this.stats['speed'].evasion = Math.min(9, Math.floor(this.stats['speed'].value / 5));
+
     // Loop through ability scores, and add their modifiers to our sheet output.
-    for (const key in this.abilities) {
-      // Calculate the modifier using d20 rules.
-      this.abilities[key].mod = Math.floor((this.abilities[key].value - 10) / 2);
+    for (const key in this.stats) {
       // Handle ability label localization.
-      this.abilities[key].label = game.i18n.localize(CONFIG.POKEMON_TABLETOP_EVOLUTION.abilities[key]) ?? key;
+      this.stats[key].label = game.i18n.localize(CONFIG.POKEMON_TABLETOP_EVOLUTION.stats[key]) ?? key;
     }
   }
 

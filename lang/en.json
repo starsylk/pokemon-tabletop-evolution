@@ -1,15 +1,105 @@
 {
   "POKEMON_TABLETOP_EVOLUTION": {
-    "Ability": {
-      "Str": { "long": "Strength", "abbr": "str" },
-      "Con": { "long": "Constitution", "abbr": "con" },
-      "Dex": { "long": "Dexterity", "abbr": "dex" },
-      "Int": { "long": "Intelligence", "abbr": "int" },
-      "Wis": { "long": "Wisdom", "abbr": "wis" },
-      "Cha": { "long": "Charisma", "abbr": "cha" }
+    "Skill": {
+      "acrobatics": {
+        "long": "Acrobatics",
+        "abbr": "acrobatics"
+      },
+      "athletics": {
+        "long": "Athletics",
+        "abbr": "athletics"
+      },
+      "charm": {
+        "long": "Charm",
+        "abbr": "charm"
+      },
+      "combat": {
+        "long": "Combat",
+        "abbr": "combat"
+      },
+      "command": {
+        "long": "Command",
+        "abbr": "command"
+      },
+      "focus": {
+        "long": "Focus",
+        "abbr": "focus"
+      },
+      "guile": {
+        "long": "Guile",
+        "abbr": "guile"
+      },
+      "intimidate": {
+        "long": "Intimidate",
+        "abbr": "intimidate"
+      },
+      "intuition": {
+        "long": "Intuition",
+        "abbr": "intuition"
+      },
+      "perception": {
+        "long": "Perception",
+        "abbr": "perception"
+      },
+      "stealth": {
+        "long": "Stealth",
+        "abbr": "stealth"
+      },
+      "genEdu": {
+        "long": "General Education",
+        "abbr": "genEdu"
+      },
+      "medicineEdu": {
+        "long": "Medicine Education",
+        "abbr": "medicineEdu"
+      },
+      "natureEdu": {
+        "long": "Nature Education",
+        "abbr": "natureEdu"
+      },
+      "occultEdu": {
+        "long": "Occult Education",
+        "abbr": "occultEdu"
+      },
+      "pokeEdu": {
+        "long": "Pokémon Education",
+        "abbr": "pokéEdu"
+      },
+      "techEdu": {
+        "long": "Technology Education",
+        "abbr": "techEdu"
+      }
+    },
+    "Stats": {
+      "Hp": {
+        "long": "Health Points",
+        "abbr": "hp"
+      },
+      "Atk": {
+        "long": "Attack",
+        "abbr": "atk"
+      },
+      "Def": {
+        "long": "Defense",
+        "abbr": "def"
+      },
+      "SpAtk": {
+        "long": "Special Attack",
+        "abbr": "spatk"
+      },
+      "SpDef": {
+        "long": "Special Defense",
+        "abbr": "spdef"
+      },
+      "Spd": {
+        "long": "Speed",
+        "abbr": "spd"
+      }
     },
     "SheetLabels": {
       "Actor": "PTE Actor Sheet",
+      "Trainer": "PTE Trainer Sheet",
+      "Pokemon": "PTE Pokemon Sheet",
       "Item": "PTE Item Sheet"
     },
     "Item": {
@@ -26,7 +116,6 @@
       "Inactive": "Inactive Effects"
     }
   },
-
   "TYPES": {
     "Actor": {
       "character": "Character",

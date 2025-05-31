@@ -1,5 +1,8 @@
 // Import document classes.
 import { PTEActor } from './documents/actor.mjs';
+import { PTETrainer } from './documents/trainer.mjs';
+import { PTEPokemon } from './documents/pokemon.mjs';
+import { PTEActor } from './documents/actor.mjs';
 import { PTEItem } from './documents/item.mjs';
 // Import sheet classes.
 import { PTEActorSheet } from './sheets/actor-sheet.mjs';
@@ -18,6 +21,8 @@ Hooks.once('init', function () {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.pte = {
+    PTETrainer,
+    PTEPokemon,
     PTEActor,
     PTEItem,
     rollItemMacro,
@@ -31,7 +36,7 @@ Hooks.once('init', function () {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: '1d20 + @abilities.dex.mod',
+    formula: '1d20 + @stats.speed.mod',
     decimals: 2,
   };
 
@@ -40,10 +45,10 @@ Hooks.once('init', function () {
 
   // Note that you don't need to declare a DataModel
   // for the base actor/item classes - they are included
-  // with the Character/NPC as part of super.defineSchema()
+  // with the Trainer/Pokemon as part of super.defineSchema()
   CONFIG.Actor.dataModels = {
-    trainer: models.PTECharacter,
-    pokemon: models.PTECharacter,
+    trainer: models.PTETrainer,
+    pokemon: models.PTEPokemon,
     // npc: models.PTENPC
   }
   CONFIG.Item.documentClass = PTEItem;
@@ -60,9 +65,13 @@ Hooks.once('init', function () {
 
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet);
-  Actors.registerSheet('pte', PTEActorSheet, {
+  Actors.registerSheet('pte', PTETrainerSheet, {
     makeDefault: true,
-    label: 'POKEMON_TABLETOP_EVOLUTION.SheetLabels.Actor',
+    label: 'POKEMON_TABLETOP_EVOLUTION.SheetLabels.Trainer',
+  });
+  Actors.registerSheet('pte', PTEPokemonSheet, {
+    makeDefault: true,
+    label: 'POKEMON_TABLETOP_EVOLUTION.SheetLabels.Pokemon',
   });
   Items.unregisterSheet('core', ItemSheet);
   Items.registerSheet('pte', PTEItemSheet, {

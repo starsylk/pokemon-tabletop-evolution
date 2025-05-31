@@ -1,6 +1,7 @@
 // Export Actors
 export {default as PTEActorBase} from "./base-actor.mjs";
-export {default as PTECharacter} from "./actor-character.mjs";
+export {default as PTETrainer} from "./actor-character.mjs";
+export {default as PTEPokemon} from "./actor-pokemon.mjs";
 export {default as PTENPC} from "./actor-npc.mjs";
 
 // Export Items
