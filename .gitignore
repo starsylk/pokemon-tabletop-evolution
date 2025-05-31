@@ -1,0 +1,14 @@
+# IDE Related
+.idea/
+.nova/
+.vs/
+.vscode/
+*.code-workspace
+*.iml
+*.swp
+
+# Node Modules
+node_modules/
+
+# OS Specific
+.DS_Store
