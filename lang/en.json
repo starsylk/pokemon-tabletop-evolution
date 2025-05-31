@@ -1,12 +1,12 @@
 {
   "POKEMON_TABLETOP_EVOLUTION": {
     "Ability": {
-      "Str": { "long": "Strength", "abbr": "str" },
-      "Con": { "long": "Constitution", "abbr": "con" },
-      "Dex": { "long": "Dexterity", "abbr": "dex" },
-      "Int": { "long": "Intelligence", "abbr": "int" },
-      "Wis": { "long": "Wisdom", "abbr": "wis" },
-      "Cha": { "long": "Charisma", "abbr": "cha" }
+      "hp": { "long": "Health Points", "abbr": "hp" },
+      "atk": { "long": "Attack", "abbr": "atk" },
+      "def": { "long": "Defense", "abbr": "def" },
+      "spatk": { "long": "Sp. Attack", "abbr": "sp.atk" },
+      "spdef": { "long": "Sp. Defense", "abbr": "sp.def" },
+      "speed": { "long": "Speed", "abbr": "spd" }
     },
     "SheetLabels": {
       "Actor": "PTE Actor Sheet",
