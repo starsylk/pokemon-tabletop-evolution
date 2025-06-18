@@ -7,7 +7,7 @@ export default class PTECharacter extends PTEActorBase {
     const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = super.defineSchema();
 
-    schema.skills = new fields.SchemaField({
+    schema.attributes = new fields.SchemaField({
       level: new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 1 })
       }),
@@ -51,15 +51,27 @@ export default class PTECharacter extends PTEActorBase {
       // Handle ability label localization.
       this.stats[key].label = game.i18n.localize(CONFIG.POKEMON_TABLETOP_EVOLUTION.stats[key]) ?? key;
     }
+
+  }
+
+  prepareSkillDicePools() {
+    for (const key in this.skills) {
+        this.skills[key].dicePool = this.skills[key].value
+    }
   }
 
   getRollData() {
     const data = {};
 
-    // Copy the ability scores to the top level, so that rolls can use
-    // formulas like `@str.mod + 4`.
-    if (this.abilities) {
-      for (let [k,v] of Object.entries(this.abilities)) {
+    // Copy the skills to the top level, so that rolls can use
+    // formulas like `@persuasion.mod + 4`.
+    if (this.skills) {
+      for (let [k,v] of Object.entries(this.skills)) {
+        data[k] = foundry.utils.deepClone(v);
+      }
+    }
+    if (this.skills) {
+      for (let [k,v] of Object.entries(this.skills)) {
         data[k] = foundry.utils.deepClone(v);
       }
     }
